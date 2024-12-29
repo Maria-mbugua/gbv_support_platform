@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review Incidents</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Review Incidents</h1>
+    </header>
+
+    <main>
+        <h2>Pending Incidents</h2>
+        <ul>
+            {% for incident in pending_incidents %}
+            <li>
+                <p>{{ incident.description }}</p>
+                <a href="{% url 'update_incident' incident.id %}">Review</a>
+            </li>
+            {% endfor %}
+        </ul>
+        <h2>Reviewed Incidents</h2>
+        <ul>
+            {% for incident in reviewed_incidents %}
+            <li>
+                <p>{{ incident.description }}</p>
+                <p><strong>Recommendation:</strong> {{ incident.recommendation }}</p>
+            </li>
+            {% endfor %}
+        </ul>
+    </main>
+
+    <footer>
+        <p>GBV Support Platform &copy; 2024</p>
+    </footer>
+</body>
+</html>

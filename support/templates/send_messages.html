@@ -1,0 +1,9 @@
+<h2>Send a Message</h2>
+<form method="POST">
+    {% csrf_token %}
+    <textarea name="content" required></textarea>
+    <label>
+        <input type="checkbox" name="anonymous"> Send as Anonymous
+    </label>
+    <button type="submit">Send</button>
+</form>

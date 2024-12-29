@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Incident</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Update Incident</h1>
+    </header>
+
+    <main>
+        <form method="post">
+            {% csrf_token %}
+            <div>
+                <label for="recommendation">Recommendation:</label>
+                <textarea id="recommendation" name="recommendation" required></textarea>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>GBV Support Platform &copy; 2024</p>
+    </footer>
+</body>
+</html>

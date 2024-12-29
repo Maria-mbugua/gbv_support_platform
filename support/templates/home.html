@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to GBV Support Platform</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 20px;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+        }
+
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        .section {
+            margin: 20px 0;
+        }
+
+        .messages {
+            margin: 10px 0;
+        }
+
+        .messages .success {
+            color: green;
+        }
+
+        .messages .error {
+            color: red;
+        }
+
+        footer {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to the GBV Support Platform</h1>
+    </header>
+
+    <nav>
+        <a href="{% url 'login' %}">Login</a>
+        <a href="{% url 'register' %}">Register</a>
+        <a href="{% url 'home' %}">Home</a>
+    </nav>
+
+    <main>
+        <div class="messages">
+            {% if messages %}
+                {% for message in messages %}
+                    <p class="{{ message.tags }}">{{ message }}</p>
+                {% endfor %}
+            {% endif %}
+        </div>
+
+        <section class="section">
+            <h2>Our Mission</h2>
+            <p>Our mission is to provide comprehensive support and resources to survivors of Gender-Based Violence. We are dedicated to creating a safe space for healing, empowerment, and advocacy.</p>
+        </section>
+
+        <section class="section">
+            <h2>Support Services</h2>
+            <ul>
+                <li><strong>Crisis Hotline:</strong> Reach out to our 24/7 hotline for immediate assistance.</li>
+                <li><strong>Counseling Services:</strong> Access confidential counseling and mental health support.</li>
+                <li><strong>Legal Assistance:</strong> Get legal advice and support for GBV cases.</li>
+                <li><strong>Safe Shelters:</strong> Find safe shelters and emergency housing options.</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>Resource Directory</h2>
+            <ul>
+                <li><a href="{% url 'resource1' %}">National GBV Hotline</a> - Available 24/7 to provide immediate support and resources.</li>
+                <li><a href="{% url 'resource2' %}">Legal Aid Kenya</a> - Offers legal assistance and advice for GBV cases.</li>
+                <li><a href="{% url 'resource3' %}">Women’s Rights Organizations</a> - Connect with organizations dedicated to protecting women's rights.</li>
+                <li><a href="{% url 'resource4' %}">Mental Health Services</a> - Access mental health support and counseling services.</li>
+                <li><a href="{% url 'resource5' %}">Safe Housing Solutions</a> - Find safe housing options for survivors in need of emergency shelter.</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>Survivor Stories</h2>
+            <p>Read inspiring stories from survivors who have bravely shared their journeys. Together, we can support and uplift one another.</p>
+            <ul>
+                <li><a href="{% url 'story1' %}">Jane's Journey to Recovery</a> - Jane shares her story of resilience and finding strength after overcoming GBV.</li>
+                <li><a href="{% url 'story2' %}">John's Story of Resilience</a> - John recounts his path to healing and empowerment.</li>
+                <li><a href="{% url 'story3' %}">Emily’s Path to Empowerment</a> - Emily details her experience and the support she received to rebuild her life.</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>Report an Incident</h2>
+            <p>If you or someone you know is experiencing Gender-Based Violence, please report the incident through our confidential form:</p>
+            <a href="{% url 'report_incident' %}" class="btn btn-primary">Report an Incident</a>
+        </section>
+
+        <section class="section">
+            <h2>Contact Us</h2>
+            <p><strong>Phone:</strong> +254 123 456 789</p>
+            <p><strong>Email:</strong> support@gbvplatform.com</p>
+            <p><strong>Address:</strong> 123 Support Lane, Nairobi, Kenya</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>GBV Support Platform &copy; 2024</p>
+    </footer>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

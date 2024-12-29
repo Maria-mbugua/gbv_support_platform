@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Incidents</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>View Incidents</h1>
+    </header>
+
+    <main>
+        <h2>Reported Incidents</h2>
+        <ul>
+            {% for incident in incidents %}
+            <li>
+                <p><strong>Description:</strong> {{ incident.description }}</p>
+                <p><strong>Status:</strong> {{ incident.status }}</p>
+                <p><strong>Recommendation:</strong> {{ incident.recommendation }}</p>
+                <p><strong>Timestamp:</strong> {{ incident.timestamp }}</p>
+            </li>
+            {% endfor %}
+        </ul>
+    </main>
+
+    <footer>
+        <p>GBV Support Platform &copy; 2024</p>
+    </footer>
+</body>
+</html>
